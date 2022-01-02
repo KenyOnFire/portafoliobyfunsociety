@@ -13,7 +13,7 @@
 
   <iframe src="animatedName.html" frameborder="0" class="name"></iframe>
 
-  <div class="centerBox" id="div_Home" style="display:block;" class="centerBox">
+  <div id="div_Home" style="display:block;" class="centerBox">
     <iframe src="boxCenterHome.html" class="centerBox" frameborder="0" id="div_Home"></iframe>
   </div>
 
@@ -36,7 +36,7 @@
   <div class="navigation">
     <ul>
       <li class="list active">
-        <a href="#" onclick="mostrar_Home()" >
+        <a href="#" onclick="mostrar_Home()">
           <span class="icon">
             <ion-icon name="planet-outline"></ion-icon>
           </span>
@@ -85,40 +85,30 @@
       item.classList.remove('active'));
       this.classList.add('active');
     }
+    const list1 = document.querySelectorAll('div.centerBox');
+    function activeIFrame(){
+      list1.forEach((item) => 
+      item.setAttribute("style", 'display:none;'));
+    }
     function mostrar_AboutMe(){
+      activeIFrame();
       document.getElementById('div_AboutMe').style.display = "block";
-      document.getElementById('div_Home').style.display = "none";
-      document.getElementById('div_Profile').style.display = "none";
-      document.getElementById('div_Contact').style.display = "none";
-      document.getElementById('div_Projects').style.display = "none";
     }
     function mostrar_Home(){
+      activeIFrame();
       document.getElementById('div_Home').style.display = "block";
-      document.getElementById('div_AboutMe').style.display = "none";
-      document.getElementById('div_Profile').style.display = "none";
-      document.getElementById('div_Contact').style.display = "none";
-      document.getElementById('div_Projects').style.display = "none";  
     }
     function mostrar_Profile(){
+      activeIFrame();
       document.getElementById('div_Profile').style.display = "block";
-      document.getElementById('div_Home').style.display = "none";
-      document.getElementById('div_AboutMe').style.display = "none";
-      document.getElementById('div_Contact').style.display = "none";
-      document.getElementById('div_Projects').style.display = "none";
     }
     function mostrar_Contact(){
+      activeIFrame();
       document.getElementById('div_Contact').style.display = "block";
-      document.getElementById('div_Profile').style.display = "none";
-      document.getElementById('div_Home').style.display = "none";
-      document.getElementById('div_AboutMe').style.display = "none";
-      document.getElementById('div_Projects').style.display = "none";
     }
     function mostrar_Projects(){
+      activeIFrame();
       document.getElementById('div_Projects').style.display = "block";
-      document.getElementById('div_Contact').style.display = "none";
-      document.getElementById('div_Profile').style.display = "none";
-      document.getElementById('div_Home').style.display = "none";
-      document.getElementById('div_AboutMe').style.display = "none";
     }
     list.forEach((item) =>
     item.addEventListener('click', activeLink))
