@@ -152,6 +152,7 @@ body {
   position: fixed;
   bottom: 82%;
   right: 80%;
+  max-width: 100%;
 }
 .centerBox {
   position: fixed;
